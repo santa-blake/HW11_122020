@@ -33,8 +33,8 @@ import scala.xml.XML.loadFile
         val station_description = (el \ "station_description").text
       }
     }
-// val station1 = getStationFromEl(stations(0))
-// println(station1)
+// val station1 = getStationInfoFromEl(stations(0))
+// print(station1)
 
     //deserialization of XML into our internal data forma
     def getStationList(stationNodes: NodeSeq): Seq[station] = {
@@ -45,13 +45,10 @@ import scala.xml.XML.loadFile
     println("Station information in lists by each:")
     stationList.foreach(println)
 
-    //  println(books(0))
-    //  val prices = for (book <- books) yield book \ "price" //one way of extracting prices
+    //println(stations(0))
 
-    //  prices.foreach(println)
-    //below you are saying you want all prices you do not care for which element  they are
-    // so \\ is like a wildcard going as deep into XML as needed
-    // for huge XML this can take some time
+    val stationDescription = for (station <- stations) yield station \ "station_description"
+    stationDescription.foreach(println)
 
 
     //  dirPrices.foreach(println)
