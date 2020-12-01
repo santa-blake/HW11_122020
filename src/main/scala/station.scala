@@ -6,34 +6,47 @@ abstract class station {
 
   override def toString = s" $station_european_code $station_local_code in $station_name."
 
+  <station_info>
+    <station_european_code>LV0010R</station_european_code>
+    <station_local_code>LV10</station_local_code>
+    <station_name>Rucava</station_name>
+    <station_description>Station is situated in the south-west part of Latvia (Seaside Lowland), some 10 km east from the Baltic Sea and 50 km south from the sity of Liepaja</station_description>
+    <station_nuts_level0>LV</station_nuts_level0>
+    <station_nuts_level1>0</station_nuts_level1>
+    <station_nuts_level2>0</station_nuts_level2>
+    <station_nuts_level3>3</station_nuts_level3>
+    <lau_level1_code>640000</lau_level1_code>
+    <lau_level2_code>648400</lau_level2_code>
+    <lau_level2_name>Rucavas pagasts</lau_level2_name>
+    <sabe_country_code>LV</sabe_country_code>
+    <sabe_unit_code>6484</sabe_unit_code>
+    <sabe_unit_name>Rucavas pag.</sabe_unit_name>
+    <station_start_date>7-1-1985</station_start_date>
+    <station_latitude_decimal_degrees>56.162000</station_latitude_decimal_degrees>
+    <station_longitude_decimal_degrees>21.173100</station_longitude_decimal_degrees>
+    <station_latitude_dms>+056°09&apos;43&quot;</station_latitude_dms>
+    <station_longitude_dms>+021°10&apos;23&quot;</station_longitude_dms>
+    <station_altitude>18</station_altitude>
+    <type_of_station>Background</type_of_station>
+    <station_type_of_area>rural</station_type_of_area>
+    <station_characteristic_of_zone>agricultural/natural</station_characteristic_of_zone>
+    <station_subcategory_rural_background>regional</station_subcategory_rural_background>
+    <monitoring_obj>Compliance monitoring for national legislation</monitoring_obj>
+    <monitoring_obj>Trend analysis</monitoring_obj>
+    <monitoring_obj>International programmes (EMEP, GAW...)</monitoring_obj>
+    <meteorological_parameter>Conductivity</meteorological_parameter>
+    <meteorological_parameter>pH</meteorological_parameter>
+    <meteorological_parameter>Wind velocity</meteorological_parameter>
+    <meteorological_parameter>Wind direction</meteorological_parameter>
+    <meteorological_parameter>Pressure</meteorological_parameter>
+    <meteorological_parameter>Temperature</meteorological_parameter>
+    <meteorological_parameter>Relative humidity</meteorological_parameter>
+    <meteorological_parameter>Duration of sunlight</meteorological_parameter>
+    <meteorological_parameter>Precipitation</meteorological_parameter>
+    <meteorological_parameter>Direct solar radiation</meteorological_parameter>
+    <meteorological_parameter>Global radiation</meteorological_parameter>
+  </station_info>
 
-  //  <station_start_date>20-1-2005</station_start_date>
-//    <station_latitude_decimal_degrees>65.688890</station_latitude_decimal_degrees>
-//    <station_longitude_decimal_degrees>-18.100000</station_longitude_decimal_degrees>
-//    <station_latitude_dms>+065°41&apos;20&quot;</station_latitude_dms>
-//    <station_longitude_dms>-018°06&apos;00&quot;</station_longitude_dms>
-//    <station_altitude>6</station_altitude>
-//    <type_of_station>Traffic</type_of_station>
-//    <station_type_of_area>urban</station_type_of_area>
-//    <station_characteristic_of_zone>commercial</station_characteristic_of_zone>
-//    <main_emission_source>Road transport</main_emission_source>
-//    <station_area_of_representativeness>15.000</station_area_of_representativeness>
-//    <station_city>AKUREYRI</station_city>
-//    <population>17.000</population>
-//    <street_name>Tryggvabraut/Glerárgata</street_name>
-//    <street_type>Wide street: L/H &gt; 1.5</street_type>
-//    <number_of_vehicles>20000</number_of_vehicles>
-//    <station_lorry_percentage>5.000</station_lorry_percentage>
-//    <station_traffic_speed>50.000</station_traffic_speed>
-//    <station_street_width>16.000</station_street_width>
-//    <monitoring_obj>Exposure assesment (population and/or ecosystems and/or materials)</monitoring_obj>
-//    <meteorological_parameter>
-
-//
-//  val network_time_reference_basis: String //we could have multiple authors
-//  val network_type: String //we could have multiple authors
-//  val year: Int //could also use some date format
-//  val price: Double //possibly some money related format
 
   //toString is built in already so we override
 //  override def toString = s"${authors.head}: $category $title in $titleLang from $year"

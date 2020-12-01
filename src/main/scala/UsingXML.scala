@@ -1,16 +1,14 @@
-import java.awt.print.Book
-
-import scala.xml.{Node, NodeSeq}
 import scala.xml.XML.loadFile
+import scala.xml.{Node, NodeSeq}
 
   object UsingXML extends App {
 
     val airbase = loadFile("./src/resources/IS_meta.xml") // built in xml loading AND parsing
     //  println(airbase)
 
+    println("Country observed:")
     val countries = airbase \ "country"
     val country_name = for (country <- countries) yield (country \ "country_name").text
-    println("Country observed:")
     country_name.foreach(println)
     //val countryName = (airbase \\ "country_name").map(it => it.text)
     //countryName.foreach(println)
@@ -41,47 +39,20 @@ import scala.xml.XML.loadFile
       for (station <- stationNodes) yield getStationInfoFromEl(station)
     }
 
-    val stationList = getStationList(stations)
     println("Station information in lists by each:")
+    val stationList = getStationList(stations)
     stationList.foreach(println)
+        val stationInfo = (airbase \\ "station_info").map(it => it.text)
+        stationInfo.foreach(println)
+    // println(stations(0))
 
-    //println(stations(0))
+//    val stationDescription = for (station <- stations) yield station \ "station_description"
+//    stationDescription.foreach(println)
 
-    val stationDescription = for (station <- stations) yield station \ "station_description"
-    stationDescription.foreach(println)
+    println("Station descriptions:")
+    val stationDescr2 = (airbase \\ "station_description").map(it => it.text)
+    stationDescr2.foreach(println)
 
-
-    //  dirPrices.foreach(println)
-    //  val hp = (bookstore \ "books").filter(item => item.attribute.get("category") == "children")
-    //  val hp = books.filter(_.attribute("category").contains("children")) //TODO flatten
-
-    val stationInfo = (airbase \\ "station_info").map(it => it.text)
-    stationInfo.foreach(println)
-
-    val hp = (airbase \\ "country" filter {
-      _ \\ "@category" exists (_.text == "children")
-    }).text
-    //  println(hp)
-    val webBooks = airbase \\ "country" filter {
-      _ \\ "@category" exists (_.text == "web")
-    }
-    //  //so we can save our book collection by adding some parent element for example root
-    //  save("./src/resources/webBooks.xml", <bookstore>{webBooks}</bookstore>, xmlDecl = true)
-
-    //  println(webBooks)
-    //  println(books.head.attribute("category"))
-    //  println(books.head.attributes)
-    //  val cat = books.head.attribute("category")
-    //  println(cat)
-
-    val myBook = new Book {
-      val category = "childrens"
-      val title = "Happy Potter"
-      val titleLang = "en"
-      val authors = List("J.K. Rowling", "Richard Galbraith")
-      val year = 1997
-      val price = 19.95
-    }
     //  println(myBook.toXML)
     //  save("./src/resources/mybook.xml", myBook.toXML, xmlDecl = true)
   }
